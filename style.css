@@ -1,0 +1,493 @@
+
+:root {
+    --bg-color: #050505;
+    --card-bg: #0f0f0f;
+    --second-bg-color: #111111;
+    --text-color: #ededed;
+    --accent-color: #00ffcc;
+    --text-primary: #ffffff;
+    --text-secondary: #ababab;
+    --main-color: #00abf0;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--bg-color);
+    opacity: 0.9 !important; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.highlight {
+    color: var(--main-color);
+}
+
+/* =========================================
+   2. Navigation Bar
+   ========================================= */
+nav {
+    background: rgba(8, 8, 8, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(237, 237, 237, 0.1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--main-color);
+}
+
+/* =========================================
+   3. Sections Styling
+   ========================================= */
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+.flex-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-text h1 {
+    display: block; 
+    font-size: 4.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--main-color);
+    box-shadow: 0 0 30px var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    color: #080808;
+    border: 2px solid var(--main-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+/* =========================================
+   5. About Section & Drone Icon
+   ========================================= */
+.about-section {
+    position: relative;
+}
+
+.about-text-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 0;
+}
+
+.about-img-box img {
+    width: 400px; 
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 171, 240, 0.3);
+    margin-left: 40px;
+}
+
+.about-text-box {
+    flex: 1;
+    text-align: left; 
+}
+
+/* الأيقونة في الخلفية (Drone/Robot Icon) */
+.drone-icon {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    font-size: 12rem;
+    color: rgba(0, 171, 240, 0.05);
+    z-index: 1;
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* =========================================
+   6. Experience & Skills
+   ========================================= */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 2px solid var(--main-color);
+    padding-left: 30px;
+}
+
+.exp-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.exp-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.skills-grid, .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.skill-item {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 50%; /* دائرية كما في الصورة */
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 171, 240, 0.1);
+    transition: 0.4s;
+}
+
+.skill-item:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.skill-item i, .service-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--main-color);
+}
+/* الخبرات (Experience) مع صور */
+.exp-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    border-left: 5px solid var(--main-color);
+}
+
+.exp-logo { width: 80px; height: 80px; border-radius: 10px; }
+
+/* =========================================
+   7. Projects
+   ========================================= */
+.projects-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+}
+
+.project-card {
+    display: flex; 
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.project-img {
+    width: 45%; 
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-info {
+    flex: 1;
+    padding: 40px;
+    text-align: left;
+}
+
+/* Certifications Section */
+#certifications {
+    background: var(--second-bg);
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.cert-card {
+    background: #161625;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(0, 171, 240, 0.1);
+    transition: 0.4s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 10px 30px rgba(0, 171, 240, 0.2);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.cert-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.cert-issuer {
+    color: var(--main-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.cert-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.btn-cert {
+    padding: 8px 20px;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-cert:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* =========================================
+   8. Get In Touch (Contact)
+   ========================================= */
+.contact-section {
+    text-align: center;
+}
+
+.contact-wrapper h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #ababab;
+}
+
+.email-box a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.social-icons-footer {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-icons-footer a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons-footer a:hover {
+    color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   9. Thanks & Mini Robot
+   ========================================= */
+.glitch {
+    font-size: 4.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--main-color);
+    text-align: center;
+}
+
+/* الروبوت الطائر */
+.mini-robot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 50px;
+    color: var(--main-color);
+    z-index: 2000;
+    cursor: pointer;
+    transition: 0.4s ease;
+    filter: drop-shadow(0 0 10px var(--main-color));
+    animation: float 3s ease-in-out infinite;
+}
+
+.robot-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: var(--main-color);
+    filter: blur(35px);
+    opacity: 0.4;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.mini-robot:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: #fff;
+}
+
+/* =========================================
+   10. Footer & Responsiveness
+   ========================================= */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background: var(--bg-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .flex-hero { flex-direction: column-reverse; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .profile-img { width: 250px; height: 250px; }
+}
